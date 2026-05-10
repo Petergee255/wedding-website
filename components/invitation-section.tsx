@@ -1,0 +1,75 @@
+"use client";
+
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { useRef } from "react";
+
+const text = "you're cordially invited to celebrate the story of...";
+const characters = text.split("");
+
+interface CharProps {
+  char: string;
+  index: number;
+  total: number;
+  scrollYProgress: MotionValue<number>;
+}
+
+function AnimatedChar({ char, index, total, scrollYProgress }: CharProps) {
+  const scrollRange = 0.6;
+  const startScroll = 0.1 + (index / total) * scrollRange * 0.6;
+  const endScroll = startScroll + scrollRange * 0.4;
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [startScroll, endScroll],
+    [0.08, 1],
+  );
+
+  // Subtle upward drift as character comes in
+  const y = useTransform(scrollYProgress, [startScroll, endScroll], [6, 0]);
+
+  // Blur clears as character reveals
+  const filter = useTransform(
+    scrollYProgress,
+    [startScroll, endScroll],
+    ["blur(4px)", "blur(0px)"],
+  );
+
+  return (
+    <motion.span
+      style={{ opacity, y, filter, display: "inline-block" }}
+      className="whitespace-pre"
+    >
+      {char}
+    </motion.span>
+  );
+}
+
+export function InvitationSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  return (
+    <section
+      ref={containerRef}
+      className="min-h-[40vh] flex items-center justify-center px-4 bg-[#fcf7ed]"
+    >
+      <div className="text-center max-w-5xl">
+        <h2 className="font-serif-custom text-4xl md:text-5xl lg:text-6xl font-bold tracking-normal leading-tight ">
+          {characters.map((char, i) => (
+            <AnimatedChar
+              key={i}
+              char={char}
+              index={i}
+              total={characters.length}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
+        </h2>
+      </div>
+    </section>
+  );
+}
