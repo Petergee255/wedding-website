@@ -85,32 +85,32 @@ export function AdditionalDetailsSection() {
     {
       title: "Wedding Parties",
       description: "Meet our favorite people.",
-      imagePath: "/details-parties.png",
+      imagePath: "/a1.jfif",
     },
     {
       title: "Travel Logistics",
       description: "Plan your trip and stay.",
-      imagePath: "/details-travel.webp",
+      imagePath: "/a5.jfif",
     },
     {
       title: "Registry",
       description: "Your presence is enough, but if you insist...",
-      imagePath: "/details-registry.jpg",
+      imagePath: "/a2.jfif",
     },
     {
       title: "Dress Code",
       description: "What to wear for the celebration.",
-      imagePath: "/details-dresscode.png",
+      imagePath: "/a.jfif",
     },
     {
       title: "Music",
       description: "The soundtrack to our celebration.",
-      imagePath: "/details-music.jpg",
+      imagePath: "/d5.jfif",
     },
     {
       title: "Dining",
       description: "Culinary delights await.",
-      imagePath: "/details-dining.png",
+      imagePath: "/a3.jfif",
     },
   ];
 

@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const WEDDING_DATE = new Date("2027-06-18T00:00:00");
+const WEDDING_DATE = new Date("2027-11-11T00:00:00");
 
 function useCountdown(targetDate: Date) {
   const [timeLeft, setTimeLeft] = useState({
@@ -79,9 +79,7 @@ export function CountdownSection() {
       className="min-h-screen flex flex-col items-center justify-center px-4 pb-8 lg:pb-13 bg-[#fcf7ed]"
     >
       {/* Join us text */}
-      <h2
-        className="font-serif-custom font-bold text-4xl md:text-5xl lg:text-6xl text-center text-foreground  mb-14 md:mb-18 lg:mb-20"
-      >
+      <h2 className="font-serif-custom font-bold text-4xl md:text-5xl lg:text-6xl text-center text-foreground  mb-14 md:mb-18 lg:mb-20">
         so please join us...
       </h2>
 
@@ -90,7 +88,7 @@ export function CountdownSection() {
         className="font-serif-custom text-[80px] sm:text-[90px] md:text-[100px] lg:text-[140px]  text-center text-foreground mb-16 md:mb-20 lg:mb-22"
         style={{ opacity: dateOpacity, y: dateY }}
       >
-        june 18, 2027
+        November 11, 2027
       </motion.p>
 
       {/* Countdown */}

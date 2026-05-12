@@ -5,16 +5,16 @@ import { useRef } from "react";
 
 const text =
   "The vision for the night is simple: all of our most beloved people in one place that happens to have a gorgeous garden, flowing drinks, and an unforgettable dance floor.";
-const characters = text.split("");
+const words = text.split(" ");
 
-interface CharProps {
-  char: string;
+interface WordProps {
+  word: string;
   index: number;
   total: number;
   scrollYProgress: MotionValue<number>;
 }
 
-function AnimatedChar({ char, index, total, scrollYProgress }: CharProps) {
+function AnimatedWord({ word, index, total, scrollYProgress }: WordProps) {
   const scrollRange = 0.6;
   const startScroll = 0.1 + (index / total) * scrollRange * 0.6;
   const endScroll = startScroll + scrollRange * 0.4;
@@ -38,9 +38,9 @@ function AnimatedChar({ char, index, total, scrollYProgress }: CharProps) {
   return (
     <motion.span
       style={{ opacity, y, filter, display: "inline-block" }}
-      className="whitespace-pre"
+      className="whitespace-nowrap mr-[0.25em]"
     >
-      {char}
+      {word}
     </motion.span>
   );
 }
@@ -60,12 +60,12 @@ export function VisionSection() {
     >
       <div className="text-center max-w-5xl max-w-auto">
         <h2 className="text-[55px] font-serif-custom md:text-[75px] lg:text-[90px] font-bold tracking-tighter leading-tight text-foreground">
-          {characters.map((char, i) => (
-            <AnimatedChar
+          {words.map((word, i) => (
+            <AnimatedWord
               key={i}
-              char={char}
+              word={word}
               index={i}
-              total={characters.length}
+              total={words.length}
               scrollYProgress={scrollYProgress}
             />
           ))}

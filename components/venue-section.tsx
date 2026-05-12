@@ -32,7 +32,7 @@ export function VenueSection() {
       >
         <div className="relative aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-lg">
           <Image
-            src="/venue.png"
+            src="/venue1.png"
             alt="Cecil Green Park House"
             fill
             className="object-cover"
@@ -46,7 +46,7 @@ export function VenueSection() {
         className="font-serif-custom text-5xl text-center tracking-wider text-foreground mb-6 "
         style={{ opacity: titleOpacity, y: titleY }}
       >
-        Cecil Green Park House
+        Crescent Grove Manor
       </motion.h2>
 
       {/* Venue Address */}
@@ -54,7 +54,7 @@ export function VenueSection() {
         className="font-sans-custom text-lg text-center text-muted-foreground tracking-wide"
         style={{ opacity: addressOpacity, y: addressY }}
       >
-        6251 CECIL GREEN PARK RD, VANCOUVER, BC
+       6251 CRESCENT GROVE DR, VANCOUVER, BC
       </motion.p>
 
       {/* RSVP Button */}

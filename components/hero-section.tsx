@@ -79,7 +79,7 @@ export function HeroSection() {
   const sideImages = {
     leftTop: "/Tems.jfif",
     leftBottom: "/sem.jfif",
-    rightTop: "/hero-thunderbay.webp",
+    rightTop: "/d6.jfif",
     rightBottom: "/mama.jfif",
     center: "/dave.jfif",
   };

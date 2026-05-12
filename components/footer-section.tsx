@@ -15,7 +15,7 @@ export function FooterSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/footer (1).png"
+          src="/d10.jfif"
           alt="J&P"
           fill
           className="object-cover"
